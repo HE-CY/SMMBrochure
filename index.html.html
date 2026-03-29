@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Management Brochure</title>
+  <meta name="description" content="Professional brochure and pricing page for a Cyprus-based social media management and content creation company." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --bg2:#111933;
+      --card:#121a30;
+      --soft:#1b2748;
+      --line:rgba(255,255,255,.12);
+      --text:#eef2ff;
+      --muted:#a8b3cf;
+      --accent:#6ee7b7;
+      --accent2:#60a5fa;
+      --warn:#fbbf24;
+      --danger:#f87171;
+      --shadow:0 18px 40px rgba(0,0,0,.28);
+      --radius:24px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(96,165,250,.20), transparent 50%),
+        radial-gradient(900px 500px at 100% 0%, rgba(110,231,183,.18), transparent 45%),
+        linear-gradient(180deg,var(--bg),#09101c 100%);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .nav{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter: blur(14px);
+      background:rgba(11,16,32,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:74px;gap:16px
+    }
+    .brand{
+      display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.2px
+    }
+    .logo{
+      width:40px;height:40px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent2),var(--accent));
+      box-shadow:var(--shadow)
+    }
+    .nav-links{display:flex;gap:20px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-weight:600}
+    .nav-links a:hover{color:var(--text)}
+    .cta{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 18px;border-radius:999px;
+      font-weight:800;border:1px solid transparent;
+      transition:.2s transform ease,.2s opacity ease,.2s border ease;
+      cursor:pointer;
+    }
+    .cta:hover{transform:translateY(-1px)}
+    .cta-primary{
+      background:linear-gradient(135deg,var(--accent2),var(--accent));
+      color:#081120;
+      box-shadow:var(--shadow)
+    }
+    .cta-secondary{
+      border-color:var(--line);
+      background:rgba(255,255,255,.03)
+    }
+
+    .hero{padding:72px 0 36px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center
+    }
+    .eyebrow{
+      display:inline-flex;gap:10px;align-items:center;
+      color:#d1fae5;background:rgba(110,231,183,.12);
+      border:1px solid rgba(110,231,183,.28);
+      padding:8px 12px;border-radius:999px;font-size:14px;font-weight:700
+    }
+    h1{
+      margin:16px 0 14px;
+      font-size:clamp(38px,6vw,68px);
+      line-height:1.02;letter-spacing:-1.8px
+    }
+    .lead{
+      color:var(--muted);font-size:clamp(17px,2vw,20px);max-width:720px
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+    .mini-note{color:var(--muted);font-size:14px;margin-top:14px}
+    .hero-card,.card{
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-card{padding:22px}
+    .stat-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px
+    }
+    .stat{
+      padding:18px;border-radius:20px;background:rgba(255,255,255,.035);border:1px solid var(--line)
+    }
+    .stat .num{font-size:28px;font-weight:900}
+    .stat .label{color:var(--muted);font-size:14px;margin-top:4px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .pill{
+      padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.05);
+      border:1px solid var(--line);color:#dbe5ff;font-weight:700;font-size:14px
+    }
+
+    section{padding:34px 0}
+    .section-head{margin-bottom:18px}
+    .section-head h2{
+      margin:0 0 8px;font-size:clamp(28px,4vw,42px);letter-spacing:-1px
+    }
+    .section-head p{margin:0;color:var(--muted);max-width:760px}
+
+    .industries{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+    }
+    .industry{padding:22px}
+    .industry h3{margin:0 0 10px;font-size:22px}
+    .industry p{color:var(--muted);margin:0 0 12px}
+    .industry ul{margin:0;padding-left:18px;color:#dce7ff}
+    .industry li+li{margin-top:8px}
+
+    .pricing-wrap{
+      display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:18px;align-items:stretch
+    }
+    .price-card{
+      position:relative;padding:24px;display:flex;flex-direction:column;min-height:100%
+    }
+    .price-card.featured{
+      border-color:rgba(110,231,183,.45);
+      transform:scale(1.025);
+      background:
+        radial-gradient(500px 180px at 50% 0%, rgba(110,231,183,.15), transparent 55%),
+        linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+    }
+    .badge{
+      display:inline-block;padding:7px 11px;border-radius:999px;
+      font-size:12px;font-weight:900;letter-spacing:.4px;text-transform:uppercase
+    }
+    .badge-soft{background:rgba(255,255,255,.07);border:1px solid var(--line);color:#dbe5ff}
+    .badge-featured{background:rgba(110,231,183,.16);border:1px solid rgba(110,231,183,.34);color:#d1fae5}
+    .package{font-size:28px;font-weight:900;margin:16px 0 6px}
+    .package-sub{color:var(--muted);margin:0 0 16px}
+    .price{
+      display:flex;align-items:flex-end;gap:8px;margin-bottom:14px
+    }
+    .price .value{font-size:56px;font-weight:900;line-height:1}
+    .price .per{color:var(--muted);padding-bottom:8px}
+    .save{
+      background:rgba(96,165,250,.14);border:1px solid rgba(96,165,250,.28);
+      color:#dbeafe;border-radius:14px;padding:10px 12px;font-weight:700;font-size:14px;margin-bottom:16px
+    }
+    .features{margin:4px 0 22px;padding:0;list-style:none}
+    .features li{
+      padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.09);color:#e7efff
+    }
+    .features li:last-child{border-bottom:none}
+    .muted{color:var(--muted)}
+    .package-foot{margin-top:auto}
+
+    .comparison{overflow:auto}
+    table{
+      width:100%;border-collapse:separate;border-spacing:0;
+      border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.025)
+    }
+    th,td{padding:16px 14px;text-align:left;border-bottom:1px solid var(--line)}
+    tr:last-child td{border-bottom:none}
+    th{
+      background:rgba(255,255,255,.035);font-size:14px;text-transform:uppercase;letter-spacing:.4px;color:#dbe5ff
+    }
+    td:nth-child(2), th:nth-child(2){background:rgba(110,231,183,.07)}
+    .yes{font-weight:800}
+    .no{color:#7f8bad}
+
+    .add-ons{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+    }
+    .addon{padding:22px}
+    .addon h3{margin:0 0 8px;font-size:22px}
+    .addon p{margin:0 0 10px;color:var(--muted)}
+    .price-range{font-size:26px;font-weight:900}
+
+    .process{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px
+    }
+    .step{padding:22px}
+    .step-num{
+      width:36px;height:36px;border-radius:999px;display:grid;place-items:center;
+      font-weight:900;background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.28);margin-bottom:12px
+    }
+
+    .footer{padding:32px 0 60px;color:var(--muted)}
+    .footer-box{
+      display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+      padding:20px 22px
+    }
+
+    @media (max-width: 1024px){
+      .hero-grid,.pricing-wrap,.industries,.add-ons,.process{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 700px){
+      .nav-inner{padding:8px 0}
+      .nav-links{display:none}
+      .hero{padding-top:40px}
+      .hero-grid,.pricing-wrap,.industries,.add-ons,.process{grid-template-columns:1fr}
+      .price-card.featured{transform:none}
+      .price .value{font-size:48px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div>YOUR AGENCY NAME</div>
+          <div style="font-size:12px;color:var(--muted);font-weight:700">Social Media Management & Content Creation</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#industries">Industries</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#compare">Compare</a>
+        <a href="#addons">Add-ons</a>
+      </div>
+      <a class="cta cta-primary" href="mailto:your@email.com?subject=Social%20Media%20Management%20Inquiry">Book a Call</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Cyprus-focused packages • 6-month pre-paid pricing</div>
+        <h1>Professional social media management that makes the <span style="background:linear-gradient(135deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">€300 plan</span> the obvious choice.</h1>
+        <p class="lead">
+          Built for Cyprus businesses that need consistent content, stronger visibility, and professional page management without agency-level overhead.
+          Paid ads are available as an extra cost, and you can choose whether we post on your page or simply deliver the content for your team to publish.
+        </p>
+        <div class="hero-actions">
+          <a class="cta cta-primary" href="#pricing">View Packages</a>
+          <a class="cta cta-secondary" href="#industries">See Industry Fit</a>
+        </div>
+        <div class="mini-note">All prices shown are monthly rates available on a 6-month pre-paid agreement.</div>
+      </div>
+
+      <div class="hero-card">
+        <div style="font-size:14px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.4px">Why this works in Cyprus</div>
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="num">Hospitality</div>
+            <div class="label">Restaurants, cafés, hotels and tourism businesses need frequent visual content.</div>
+          </div>
+          <div class="stat">
+            <div class="num">Property</div>
+            <div class="label">Real estate needs reels, listings, location content and ad-ready assets.</div>
+          </div>
+          <div class="stat">
+            <div class="num">Beauty</div>
+            <div class="label">Aesthetic clinics, salons and spas sell best with before/after and trust content.</div>
+          </div>
+          <div class="stat">
+            <div class="num">Fitness</div>
+            <div class="label">Gyms and coaches need ongoing promo, community proof and offers.</div>
+          </div>
+        </div>
+        <div class="pill-row">
+          <div class="pill">Content creation</div>
+          <div class="pill">Page management</div>
+          <div class="pill">Reels</div>
+          <div class="pill">Strategy</div>
+          <div class="pill">Optional ad management</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="industries">
+    <div class="container">
+      <div class="section-head">
+        <h2>Industry strategy for Cyprus</h2>
+        <p>Do not sell the same package the same way to everyone. In Cyprus, different sectors buy for different reasons. This section tells clients exactly how your service fits their business.</p>
+      </div>
+
+      <div class="industries">
+        <article class="card industry">
+          <h3>Restaurants & Cafés</h3>
+          <p>Fastest close if you lead with visibility, offers and consistency.</p>
+          <ul>
+            <li>Sell lunch deals, brunch, events, delivery and seasonal specials.</li>
+            <li>Best package to push: <strong>Growth €300</strong>.</li>
+            <li>What matters: frequent posts, story-style visuals, reels, menu promos.</li>
+          </ul>
+        </article>
+
+        <article class="card industry">
+          <h3>Beauty, Salons & Aesthetics</h3>
+          <p>Clients buy trust, presentation and booking demand.</p>
+          <ul>
+            <li>Use before/after, treatment education, reviews and clean branding.</li>
+            <li>Best package to push: <strong>Growth €300</strong> or <strong>Premium €500</strong>.</li>
+            <li>What matters: reels, polished visuals, offer campaigns and page management.</li>
+          </ul>
+        </article>
+
+        <article class="card industry">
+          <h3>Real Estate</h3>
+          <p>Higher-ticket clients can support stronger pricing.</p>
+          <ul>
+            <li>Sell listings, local area lifestyle, credibility and lead generation.</li>
+            <li>Best package to push: <strong>Premium €500</strong>.</li>
+            <li>What matters: reels, property walkthroughs, ad-ready assets and response speed.</li>
+          </ul>
+        </article>
+
+        <article class="card industry">
+          <h3>Hotels, Villas & Tourism</h3>
+          <p>Visual businesses need content that drives booking intent.</p>
+          <ul>
+            <li>Sell atmosphere, amenities, experiences and trust.</li>
+            <li>Best package to push: <strong>Growth €300</strong> in off-peak, <strong>Premium €500</strong> in season.</li>
+            <li>What matters: reels, seasonal promos, multilingual-friendly content and ads.</li>
+          </ul>
+        </article>
+
+        <article class="card industry">
+          <h3>Gyms & Coaches</h3>
+          <p>They buy membership growth, class visibility and social proof.</p>
+          <ul>
+            <li>Use transformations, class clips, trainer tips and offer posts.</li>
+            <li>Best package to push: <strong>Growth €300</strong>.</li>
+            <li>What matters: consistency, reels and local ad campaigns.</li>
+          </ul>
+        </article>
+
+        <article class="card industry">
+          <h3>Professional Services</h3>
+          <p>Law, finance, consulting, clinics and B2B need authority first.</p>
+          <ul>
+            <li>Sell credibility, consistency and premium presentation.</li>
+            <li>Best package to push: <strong>Growth €300</strong> as a safe entry.</li>
+            <li>What matters: brand positioning, educational content and trust-building.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pricing built to move clients to €300+</h2>
+        <p>The €100 package is intentionally limited. The €300 package feels like the smart decision. The €500 package shows premium upside without making the middle look expensive.</p>
+      </div>
+
+      <div class="pricing-wrap">
+        <article class="card price-card">
+          <span class="badge badge-soft">Entry</span>
+          <div class="package">Starter</div>
+          <p class="package-sub">For businesses that only need a basic online presence.</p>
+          <div class="price">
+            <div class="value">€100</div>
+            <div class="per">/ month</div>
+          </div>
+          <div class="save">Good for page activity only. Not ideal for serious growth.</div>
+          <ul class="features">
+            <li>8 posts per month</li>
+            <li>Static content + captions</li>
+            <li>Hashtag research</li>
+            <li>Post scheduling</li>
+            <li>Basic monthly report</li>
+            <li class="muted">No reels</li>
+            <li class="muted">No strategy planning</li>
+            <li class="muted">No engagement handling</li>
+          </ul>
+          <div class="package-foot">
+            <a class="cta cta-secondary" href="mailto:your@email.com?subject=Starter%20Package%20Inquiry">Ask about Starter</a>
+          </div>
+        </article>
+
+        <article class="card price-card featured">
+          <span class="badge badge-featured">Most Popular</span>
+          <div class="package">Growth</div>
+          <p class="package-sub">Best value for businesses that actually want visibility, consistency and results.</p>
+          <div class="price">
+            <div class="value">€300</div>
+            <div class="per">/ month</div>
+          </div>
+          <div class="save">The best balance of content volume, management and value.</div>
+          <ul class="features">
+            <li><strong>16 posts per month</strong></li>
+            <li><strong>Mix of graphics + reels / short videos</strong></li>
+            <li><strong>Captions with CTA strategy</strong></li>
+            <li><strong>Content calendar planning</strong></li>
+            <li><strong>Competitor and trend research</strong></li>
+            <li><strong>Posting + basic page management</strong></li>
+            <li><strong>Monthly analytics report</strong></li>
+            <li><strong>Option for us to post on your behalf</strong></li>
+          </ul>
+          <div class="package-foot">
+            <a class="cta cta-primary" href="mailto:your@email.com?subject=Growth%20Package%20Inquiry">Choose Growth</a>
+          </div>
+        </article>
+
+        <article class="card price-card">
+          <span class="badge badge-soft">Premium</span>
+          <div class="package">Premium</div>
+          <p class="package-sub">For businesses that need heavier output, faster execution and stronger involvement.</p>
+          <div class="price">
+            <div class="value">€500</div>
+            <div class="per">/ month</div>
+          </div>
+          <div class="save">Ideal for real estate, hospitality, clinics and brands with active campaigns.</div>
+          <ul class="features">
+            <li>25–30 posts per month</li>
+            <li>High-quality reels, videos and graphics</li>
+            <li>Advanced content strategy</li>
+            <li>Full page management + active engagement</li>
+            <li>Weekly performance tracking</li>
+            <li>Trend-based content planning</li>
+            <li>Monthly strategy call</li>
+            <li>Priority support</li>
+          </ul>
+          <div class="package-foot">
+            <a class="cta cta-secondary" href="mailto:your@email.com?subject=Premium%20Package%20Inquiry">Ask about Premium</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="container">
+      <div class="section-head">
+        <h2>Package comparison</h2>
+        <p>This table does the sales work for you. It makes the €300 plan look like the sensible option, not the expensive one.</p>
+      </div>
+
+      <div class="comparison">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Growth €300</th>
+              <th>Starter €100</th>
+              <th>Premium €500</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Posts per month</td>
+              <td class="yes">16</td>
+              <td>8</td>
+              <td>25–30</td>
+            </tr>
+            <tr>
+              <td>Reels / short videos</td>
+              <td class="yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="yes">Included</td>
+            </tr>
+            <tr>
+              <td>Page posting by us</td>
+              <td class="yes">Included</td>
+              <td>Optional</td>
+              <td class="yes">Included</td>
+            </tr>
+            <tr>
+              <td>Content calendar</td>
+              <td class="yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="yes">Included</td>
+            </tr>
+            <tr>
+              <td>Competitor / trend research</td>
+              <td class="yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="yes">Included</td>
+            </tr>
+            <tr>
+              <td>Engagement support</td>
+              <td>Basic</td>
+              <td class="no">No</td>
+              <td class="yes">Active</td>
+            </tr>
+            <tr>
+              <td>Reporting</td>
+              <td class="yes">Monthly insights</td>
+              <td>Basic report</td>
+              <td class="yes">Weekly + monthly</td>
+            </tr>
+            <tr>
+              <td>Best fit</td>
+              <td class="yes">Most businesses in Cyprus</td>
+              <td>Very small budget only</td>
+              <td>High-demand brands</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="addons">
+    <div class="container">
+      <div class="section-head">
+        <h2>Add-ons</h2>
+        <p>Keep ad spend and ad management separate. That protects your margin and makes the offer easier for clients to understand.</p>
+      </div>
+
+      <div class="add-ons">
+        <article class="card addon">
+          <h3>Paid Advertising</h3>
+          <p>Campaign setup, audience targeting, creative support and optimization.</p>
+          <div class="price-range">€100–€200 / month</div>
+          <div class="muted">Ad spend is paid separately by the client.</div>
+        </article>
+
+        <article class="card addon">
+          <h3>Ad Setup</h3>
+          <p>One-time campaign build for lead generation, awareness or offer promotion.</p>
+          <div class="price-range">€50–€100</div>
+          <div class="muted">Useful for restaurants, clinics, gyms and property.</div>
+        </article>
+
+        <article class="card addon">
+          <h3>Extra Content</h3>
+          <p>Extra posts or reels when the monthly allowance is not enough.</p>
+          <div class="price-range">€10–€20 post • €20–€40 reel</div>
+          <div class="muted">Keeps scope under control.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>How we work</h2>
+        <p>Simple process. Low friction. Professional output.</p>
+      </div>
+
+      <div class="process">
+        <article class="card step">
+          <div class="step-num">1</div>
+          <h3>Discovery</h3>
+          <p class="muted">We review your business, audience and goals.</p>
+        </article>
+        <article class="card step">
+          <div class="step-num">2</div>
+          <h3>Planning</h3>
+          <p class="muted">We build a content direction and monthly calendar.</p>
+        </article>
+        <article class="card step">
+          <div class="step-num">3</div>
+          <h3>Creation</h3>
+          <p class="muted">We design content, write captions and prepare assets.</p>
+        </article>
+        <article class="card step">
+          <div class="step-num">4</div>
+          <h3>Publishing</h3>
+          <p class="muted">We post on your page or deliver files for your team to upload.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="card footer-box">
+        <div>
+          <div style="font-size:22px;font-weight:900;color:var(--text)">Ready to grow your social media professionally?</div>
+          <div>Let’s build a package that fits your industry, content needs and budget.</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta cta-primary" href="mailto:your@email.com?subject=Social%20Media%20Management%20Inquiry">Book a Call</a>
+          <a class="cta cta-secondary" href="https://instagram.com/yourprofile" target="_blank" rel="noopener">View Work</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
